@@ -1,4 +1,4 @@
-import { routes } from './routes';
+import { startup } from './startup';
 import { Elysia, t } from 'elysia';
 import swagger from '@elysiajs/swagger';
 import Config from '../infrastructure/shared/env';
@@ -23,7 +23,7 @@ const app = new Elysia()
       },
     }),
   )
-  .use(routes)
+  .use(startup)
   .listen({ port: Config.PORT });
 
 console.log(
